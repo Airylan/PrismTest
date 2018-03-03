@@ -2,9 +2,6 @@
 using Prism.Unity;
 using Microsoft.Practices.Unity;
 using PrismTest.Views;
-using PrismTest.ViewModels;
-// using PrismTest.Entities;
-// using PrismTest.Services;
 
 namespace PrismTest
 {
@@ -22,6 +19,7 @@ namespace PrismTest
             base.ConfigureContainer();
 
             Container.RegisterType<MainWindowView>();
+            Container.RegisterType<DataInterfaces.IDataModel, Entities.DataModel>();
         }
     }
 }
