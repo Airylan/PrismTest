@@ -22,12 +22,7 @@ namespace PrismTest.ViewModels
         private IDataModel DataModel { get; set; }
         private IRegionManager RegionManager { get; set; }
 
-        private string _statusText = "Hello World!";
-        public string StatusText
-        {
-            get { return _statusText; }
-            set { SetProperty(ref _statusText, value); }
-        }
+        public string StatusText => DataModel.StatusText;
 
         private ListBoxItem _currentNavigation;
         public ListBoxItem CurrentNavigation

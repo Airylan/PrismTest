@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PrismTest.DataInterfaces
 {
+    /// <summary>
+    /// Interface for the data management
+    /// </summary>
     public interface IDataModel
     {
+        string StatusText { get; set; }
+        Uri FilePath { get; set; }
     }
 }

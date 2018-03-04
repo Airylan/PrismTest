@@ -20,8 +20,9 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ListBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            
+        <ListBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedItem="{Binding CurrentNavigation}">
+            <ListBoxItem Content="Import" HorizontalAlignment="Stretch" Tag="ImportView" />
+            <ListBoxItem Content="Data" HorizontalAlignment="Stretch" Tag="EditView" />
         </ListBox>
 
         <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" />

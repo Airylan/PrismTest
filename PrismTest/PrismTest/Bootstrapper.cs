@@ -20,6 +20,8 @@ namespace PrismTest
 
             Container.RegisterType<MainWindowView>();
             Container.RegisterType<DataInterfaces.IDataModel, Entities.DataModel>();
+            Container.RegisterTypeForNavigation<ImportView>();
+            Container.RegisterTypeForNavigation<EditView>();
         }
     }
 }
