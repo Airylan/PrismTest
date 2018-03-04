@@ -14,5 +14,7 @@ namespace PrismTest.DataInterfaces
     {
         string StatusText { get; set; }
         Uri FilePath { get; set; }
+
+        IInventory inventory { get; set; }
     }
 }
