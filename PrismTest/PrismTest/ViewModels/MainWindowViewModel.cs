@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,35 @@ namespace PrismTest.ViewModels
             RegionManager = regionManager;
         }
 
-        private IDataModel DataModel { get; set; }
+        private IDataModel DataModel
+        {
+            get => _dataModel;
+            set
+            {
+                if (_dataModel != null)
+                {
+                    _dataModel.PropertyChanged -= DataModel_PropertyChanged;
+                }
+                _dataModel = value;
+                if (_dataModel != null)
+                {
+                    _dataModel.PropertyChanged += DataModel_PropertyChanged;
+                }
+            }
+        }
+
+        private void DataModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            RaisePropertyChanged(e.PropertyName);
+        }
+
         private IRegionManager RegionManager { get; set; }
 
         public string StatusText => DataModel.StatusText;
 
         private ListBoxItem _currentNavigation;
+        private IDataModel _dataModel;
+
         public ListBoxItem CurrentNavigation
         {
             get { return _currentNavigation; }
